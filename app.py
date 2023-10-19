@@ -1,3 +1,5 @@
+from model import Pessoa
+from connect import inserir
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -14,11 +16,19 @@ def contatos():
     return render_template("contatos.html")
 
 
-@app.route("/lista_produtos")
+@app.route("/cadastro_usuario")
 def usuarios():
-    return render_template("lista_produtos.html",)
+    return render_template("cadastro_usuario.html",)
 
 
 # colocar o site no ar
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+#função para salvar dados no banco de dados
+def main():
+    p = Pessoa(13216,"Lucas","15-05-2000")
+    inserir(p)
+main()
