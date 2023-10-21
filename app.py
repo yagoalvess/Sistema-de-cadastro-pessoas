@@ -1,6 +1,5 @@
-from model import Pessoa
-from connect import inserir
 from flask import Flask, render_template
+
 
 app = Flask(__name__)
 
@@ -27,8 +26,3 @@ if __name__ == "__main__":
 
 
 
-#função para salvar dados no banco de dados
-def main():
-    p = Pessoa(13216,"Lucas","15-05-2000")
-    inserir(p)
-main()
