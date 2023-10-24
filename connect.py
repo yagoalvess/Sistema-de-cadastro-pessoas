@@ -27,3 +27,11 @@ def deletarPessoa(cpf: int):
         print("Usuario deletado com sucesso")
     else:
         print("Usuario não encontrado")
+
+
+def atualizarPessoa(cpf: int, model:Pessoa):
+    if db.search(usuario.CPF==cpf):
+        db.remove(usuario.CPF==cpf)
+        inserir(model)
+    else:
+        print("Esse usuario não existe")
