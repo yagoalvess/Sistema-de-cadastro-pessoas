@@ -1,5 +1,6 @@
 from tinydb import TinyDB,Query
 from model import Pessoa
+import pandas as pd
 
 
 db = TinyDB("Pessoas.json")
@@ -35,3 +36,8 @@ def atualizarPessoa(cpf: int, model:Pessoa):
         inserir(model)
     else:
         print("Esse usuario não existe")
+
+
+def mostrarTabelaTods():
+    todos = pd.DataFrame(db)
+    return todos
