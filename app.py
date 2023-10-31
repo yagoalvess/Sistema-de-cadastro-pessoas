@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-
+from connect import *
+from model import Pessoa
 
 app = Flask(__name__)
 
@@ -7,7 +8,8 @@ app = Flask(__name__)
 # Paginas
 @app.route("/")
 def homepage():
-    return render_template("homepage.html")
+    result = mostrarTodos()
+    return render_template("homepage.html",result = result)
 
 
 @app.route("/contatos")
