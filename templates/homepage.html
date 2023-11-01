@@ -9,49 +9,43 @@
 </head>
 <body class="p-3 mb-2 bg-secondary text-white">
     
-    <div class="p-3 mb-2 bg-dark text-white">
-        <h2>Cadastro de Usuários</h2>
-        <form action="" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
-    
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required><br><br>
-    
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required><br><br>
-    
-            <label for="confirma_senha">Confirme a Senha:</label>
-            <input type="password" id="confirma_senha" name="confirma_senha" required><br><br>
-    
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" required><br><br>
-    
-            <label for="genero">Gênero:</label>
-            <select id="genero" name="genero">
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
-            </select><br><br>
-            <table class="table">
-                <tr>
-                    <th>CPF</th>
-                    <th>Nome</th>
-                    <th>Data nascimento</th>
-                </tr>
-                {% for item in result %}
-                <tr>
-                    <td scope="col">{{item["CPF"]}}</td>
-                    <td scope="col">{{item["Nome"]}}</td>
-                    <td scope="col">{{item["DataNascimento"]}}</td>
-                </tr>
-                {% endfor %}
-            </table>
-            
-            
-            <input  class="btn btn-primary" type="submit" value="Cadastrar">
-        </form>
+    <div class="container-sm">
+        <form action="cadastrar" method="POST">
+            <div class="mb-3">
+              <label for="cpf" class="form-label">Email address</label>
+              <input type="text" class="form-control" id="cpf" name="cpf" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Password</label>
+              <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <div class="mb-3">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataNascimento" name="dataNascimento">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+          <br>
+
+          <table class="table">
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>Data nascimento</th>
+            </tr>
+            {% for item in result %}
+            <tr>
+                <td scope="col">{{item["CPF"]}}</td>
+                <td scope="col">{{item["Nome"]}}</td>
+                <td scope="col">{{item["DataNascimento"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
+
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
