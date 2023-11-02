@@ -25,16 +25,6 @@ def cadastrar():
     return redirect("/")
 
 
-@app.route("/contatos")
-def contatos():
-    return render_template("contatos.html")
-
-
-@app.route("/cadastro_usuario")
-def usuarios():
-    return render_template("cadastro_usuario.html",)
-
-
 # colocar o site no ar
 if __name__ == "__main__":
     app.run(debug=True)

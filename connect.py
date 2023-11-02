@@ -8,7 +8,6 @@ usuario = Query()
 
 
 
-
 #inserir no banco json os dados da pessoa
 def inserir(model: Pessoa):
     db.insert({"CPF":model.CPF,"Nome":model.nome, "DataNascimento":model.dataNascimento})
@@ -37,7 +36,7 @@ def atualizarPessoa(cpf: int, model:Pessoa):
     else:
         print("Esse usuario não existe")
 
-
+# mostrar os dados em uma forma organizada
 def mostrarTabelaTods():
     todos = pd.DataFrame(db)
     return todos
