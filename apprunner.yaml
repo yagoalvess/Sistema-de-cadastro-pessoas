@@ -1,8 +1,9 @@
 version: 1.0
 runtime: python3
 build:
-    commands:
+  commands:
     build:
-    - pip install -r requirements.txt
+      - pip install pipenv
+      - pipenv install
 run:
-    command: python app.py
+  command: python app.py
